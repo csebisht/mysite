@@ -7,11 +7,13 @@ def layout(request):
     return render(request ,"Layout.html")
 
 def index(request):
-    dest1=Destination()
-    dest1.name='Delhi'
-    dest1.description='Delhi Dill Walo ki'
-    dest1.offer=True
-    dest1.price=700
+
+    dest1 = Destination()
+    dest1.name = 'Delhi'
+    dest1.description = 'Delhi Dill Walo ki'
+    dest1.offer = True
+    dest1.price = 700
+    dest1.img = 'destination_1.jpg'
 
     dest2 = Destination()
     dest2.name = 'Mumbai'
@@ -55,7 +57,8 @@ def index(request):
     dest8.offer = True
     dest8.price = 679
 
-    dest=[dest8,dest1,dest2,dest3,dest4,dest5,dest6,dest7]
+    dest = [dest8, dest1, dest2, dest3, dest4, dest5, dest6, dest7]
+    dest = Destination.objects.all()
     return render(request ,"index.html",{"Dest1":dest})
 
 

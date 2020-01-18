@@ -3,6 +3,7 @@
     <words>
       <w>dest</w>
       <w>endblock</w>
+      <w>postgresql</w>
     </words>
   </dictionary>
 </component>

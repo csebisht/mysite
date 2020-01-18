@@ -1,5 +1,6 @@
 {% extends 'Layout.html' %}
 {% load static %}
+{% static 'images' as basURL %}
 	 {% block content %}
 	<!-- Home -->
 
@@ -160,9 +161,10 @@
 
 						<!-- Destination -->
 						{% for Dest in Dest1 %}
+
 						<div class="destination item">
 							<div class="destination_image">
-								<img src="{% static 'images/destination_1.jpg' %}" alt="">
+								<img src="{{Dest.img.url}}" alt="">
 								{% if Dest.offer %}
 								<div class="spec_offer text-center"><a href="#">Special Offer</a></div>
 								{% endif %}
