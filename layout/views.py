@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import Destination
 
 from django.http import HttpResponse
 
@@ -6,7 +7,57 @@ def layout(request):
     return render(request ,"Layout.html")
 
 def index(request):
-    return render(request ,"index.html")
+    dest1=Destination()
+    dest1.name='Delhi'
+    dest1.description='Delhi Dill Walo ki'
+    dest1.offer=True
+    dest1.price=700
+
+    dest2 = Destination()
+    dest2.name = 'Mumbai'
+    dest2.description = 'the city never sleep'
+    dest2.offer = False
+    dest2.price = 750
+
+    dest3 = Destination()
+    dest3.name = 'chennai'
+    dest3.description = 'Chennai Express'
+    dest3.offer = True
+    dest3.price = 650
+
+    dest4 = Destination()
+    dest4.name = 'Bangalore'
+    dest4.description = 'IT Industry'
+    dest4.offer = True
+    dest4.price = 800
+
+    dest5 = Destination()
+    dest5.name = 'Kolkata'
+    dest5.description = 'Mamta didi ka raj'
+    dest5.offer = False
+    dest5.price = 550
+
+    dest6 = Destination()
+    dest6.name = 'Uttarakhand'
+    dest6.description = 'Devo ki Dev Bhoomi'
+    dest6.offer = False
+    dest6.price = 600
+
+    dest7 = Destination()
+    dest7.name = 'Jammu & Kashmir'
+    dest7.description = 'switzerland Of India'
+    dest7.offer = True
+    dest7.price = 900
+
+    dest8 = Destination()
+    dest8.name = 'Bali'
+    dest8.description = 'Nulla pretium tincidunt felis, nec.'
+    dest8.offer = True
+    dest8.price = 679
+
+    dest=[dest8,dest1,dest2,dest3,dest4,dest5,dest6,dest7]
+    return render(request ,"index.html",{"Dest1":dest})
+
 
 def about(request):
     return render(request ,"about.html")
