@@ -78,6 +78,7 @@ def destinations(request):
     return render(request ,"destinations.html")
 
 def registration(request):
+
     if request.method== 'post':
         username=request.POST['username']
         first_name=request.POST['first']
@@ -88,14 +89,5 @@ def registration(request):
         User.save()
     return render(request ,"registration.html")
 
-def registration1(request):
-    if request.method== 'post':
-        username=request.POST['username']
-        first_name=request.POST['first']
-        last_name=request.POST['last']
-        email=request.POST['email']
-        password=request.POST['Password']
-        user = User.objects.create_user(username=username,password=password,email=email,first_name=first_name,last_name=last_name)
-        User.save()
-    return render(request ,"registration.html")
+
 
