@@ -146,7 +146,7 @@
 	</div>
 
 	<!-- Destinations -->
-
+	{% if user.is_authenticated %}
 	<div class="destinations" id="destinations">
 		<div class="container">
 			<div class="row">
@@ -241,7 +241,7 @@
 			</div>
 		</div>
 	</div>
-
+    {% endif%}
 	<!-- Testimonials -->
 
 	<div class="testimonials" id="testimonials">
