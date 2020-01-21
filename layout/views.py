@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Destination
 from django.contrib.auth.models import User, auth
+from django.contrib import messages
 from django.http import HttpResponse
 
 def layout(request):
@@ -84,11 +85,14 @@ def registration(request):
         last_name=request.POST['last']
         email=request.POST['email']
         password=request.POST['Password']
+        if request.POST['ConfirmPassword'] != password:
+            messages.info(request,"Password not match")
+            return render(request, "registration.html")
         if User.objects.filter(username=username).exists():
-            print('user found')
+            messages.info(request,"User name already Exists")
             return render(request, "registration.html")
         elif User.objects.filter(email=email).exists():
-            print('email found')
+            messages.info(request, "User Email already Exists")
             return render(request, "registration.html")
         else:
           user = User.objects.create_user(username=username,password=password,email=email,first_name=first_name,last_name=last_name)
