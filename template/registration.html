@@ -60,7 +60,9 @@
 
 				<!-- Contact Form -->
 				<div class="col-lg-6">
+					<div class="contact_title">Register</div>
 					<div class="contact_form_container">
+
 						<form action="/registration/" id="contact_form" class="contact_form" method="post">
                                  {% csrf_token %}
 							{% for message in messages  %}

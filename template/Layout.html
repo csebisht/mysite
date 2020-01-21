@@ -48,15 +48,21 @@
 							<div class="logo"><a href="/">Travello</a></div>
 							<nav class="main_nav">
 								<ul class="d-flex flex-row align-items-start justify-content-start">
+									{% if user.is_authenticated %}
 									<li class="active"><a href="/">Home</a></li>
 									<li><a href="/about">About us</a></li>
 									<li><a href="/service">Services</a></li>
 									<li><a href="/news">News</a></li>
 									<li><a href="/contact">Contact</a></li>
-									<li><a href="/registration">registration</a></li>
+									<li><a href="/logout">Logout</a></li>
+									  <li><a href="#">Hello, {{user.username}}</a></li>
+									{% else %}
+									<li><a href="/registration">Registration</a></li>
+									<li><a href="/login">Login</a></li>
+									{% endif %}
 								</ul>
 							</nav>
-							<div class="header_phone ml-auto">Call us: 00-56 445 678 33</div>
+							<!--<div class="header_phone ml-auto">Call us: 00-56 445 678 33</div>-->
 
 							<!-- Hamburger -->
 
@@ -89,11 +95,18 @@
 		</div>
 		<div class="menu_content">
 			<ul>
-					<li><a href="/">Home</a></li>
+					{% if user.is_authenticated %}
+									<li class="active"><a href="/">Home</a></li>
 									<li><a href="/about">About us</a></li>
 									<li><a href="/service">Services</a></li>
 									<li><a href="/news">News</a></li>
 									<li><a href="/contact">Contact</a></li>
+									<li><a href="/logout">Logout</a></li>
+				                    <li><a href="#">Hello, {{user.username}}</a></li>
+									{% else %}
+									<li><a href="/registration">Registration</a></li>
+									<li><a href="/login">Login</a></li>
+									{% endif %}
 			</ul>
 		</div>
 		<div class="menu_social">

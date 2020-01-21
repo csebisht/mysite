@@ -78,6 +78,23 @@ def news(request):
 def destinations(request):
     return render(request ,"destinations.html")
 
+def login(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['Password']
+        user=auth.authenticate(username=username,password=password)
+        if user is not None:
+            auth.login(request,user)
+            return redirect('/')
+        else:
+            messages.info(request, "Invalid Credentials")
+            return redirect('login')
+    return render(request ,"login.html")
+
+def logout(request):
+    auth.logout(request)
+    return redirect('/')
+
 def registration(request):
     if request.method== 'POST':
         username=request.POST['username']

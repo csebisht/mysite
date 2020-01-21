@@ -12,4 +12,6 @@ urlpatterns = [
     path('news/', views.news, name='news'),
     path('destinations/', views.destinations, name='destinations'),
     path('registration/', views.registration, name='registration'),
+    path('login/', views.login, name='login'),
+    path('logout/', views.logout, name='logout'),
 ]
