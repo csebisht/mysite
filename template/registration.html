@@ -61,30 +61,30 @@
 				<!-- Contact Form -->
 				<div class="col-lg-6">
 					<div class="contact_form_container">
-						<form action="/registration" id="contact_form" class="contact_form" method="post">
+						<form action="/registration/" id="contact_form" class="contact_form" method="post">
                                  {% csrf_token %}
 							<div style="margin-bottom: 18px">
-                                <input type="text" name="username" class="contact_input contact_input_name inpt" placeholder="Your username" required="required">
+                                <input type="text" name="username" class="contact_input contact_input_name inpt" placeholder="Your username" required="required" autocapitalize="characters" autocomplete="off">
                                 <div class="input_border"></div>
                             </div>
                             <div style="margin-bottom: 18px">
-                                <input type="text" name="first" class="contact_input contact_input_name inpt" placeholder="Your first name" required="required">
+                                <input type="text" name="first" class="contact_input contact_input_name inpt" placeholder="Your first name" required="required" autocapitalize="characters"autocomplete="off">
                                 <div class="input_border"></div>
                             </div>
                             <div style="margin-bottom: 18px">
-                                <input type="text" name="last" class="contact_input contact_input_name inpt" placeholder="Your last name" required="required">
+                                <input type="text" name="last" class="contact_input contact_input_name inpt" placeholder="Your last name" required="required" autocapitalize="characters"autocomplete="off">
                                 <div class="input_border"></div>
                             </div>
                             <div style="margin-bottom: 18px">
-                                <input type="text"  name="email" class="contact_input contact_input_name inpt" placeholder="Your email" required="required">
+                                <input type="text"  name="email" class="contact_input contact_input_name inpt" placeholder="Your email" required="required"autocapitalize="characters"autocomplete="off">
                                 <div class="input_border"></div>
                             </div>
                              <div style="margin-bottom: 18px">
-                                <input type="text" name="Password" class="contact_input contact_input_name inpt" placeholder="Your Password" required="required">
+                                <input type="password" name="Password" class="contact_input contact_input_name inpt" placeholder="Your Password" required="required"autocapitalize="characters"autocomplete="off">
                                 <div class="input_border"></div>
                             </div>
                              <div style="margin-bottom: 18px">
-                                <input type="text" name="ConfirmPassword" class="contact_input contact_input_name inpt" placeholder="Confirm Password" required="required">
+                                <input type="password" name="ConfirmPassword" class="contact_input contact_input_name inpt" placeholder="Confirm Password" required="required"autocapitalize="characters"autocomplete="off">
                                 <div class="input_border"></div>
                             </div>
  							<button class="contact_button">send</button>

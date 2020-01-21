@@ -78,16 +78,26 @@ def destinations(request):
     return render(request ,"destinations.html")
 
 def registration(request):
-
-    if request.method== 'post':
+    if request.method== 'POST':
         username=request.POST['username']
         first_name=request.POST['first']
         last_name=request.POST['last']
         email=request.POST['email']
         password=request.POST['Password']
-        user = User.objects.create_user(username=username,password=password,email=email,first_name=first_name,last_name=last_name)
-        User.save()
-    return render(request ,"registration.html")
+        if User.objects.filter(username=username).exists():
+            print('user found')
+            return render(request, "registration.html")
+        elif User.objects.filter(email=email).exists():
+            print('email found')
+            return render(request, "registration.html")
+        else:
+          user = User.objects.create_user(username=username,password=password,email=email,first_name=first_name,last_name=last_name)
+          user.save()
+          return redirect('/')
+    else:
+        return render(request, "registration.html")
+
+
 
 
 
